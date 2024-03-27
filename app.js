@@ -13,7 +13,7 @@ app.get("/", function(req,res){
 app.post("/", function(req,res)
 {
   var location = req.body.cityName;
-  https.get("https://api.weatherapi.com/v1/current.json?key=a087457c261741ba98d170744222108&q=" + location, function(response){
+  https.get("" + location, function(response){ //add API URL + key
     response.on("data",function(data){
       const weatherData = JSON.parse(data);
       var temp = weatherData.current.temp_c;
